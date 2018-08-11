@@ -59,6 +59,7 @@ body {
     margin-right: 20px;
     box-shadow: 0px 0px 0.5px 0.5px var(--main-color-op9);
     padding: 5px 10px;
+    font-weight: bold;
 }
 
 .mainBox {
@@ -373,4 +374,45 @@ input[type=number]::-webkit-outer-spin-button {
     box-sizing: border-box;
     outline: 2px solid var(--main-color-op5);
     border: none;
+}
+
+.forNonInputs {
+    display: flex;
+    outline: 2px solid var(--main-color-op5);
+}
+
+.nonInputCon {
+    padding: 8px 0px;
+    font-size: 16px;
+}
+
+.ethLockBox,
+.lockEthCurBox,
+.daiTakenBox,
+.daiCurPerBox {
+    width: 50%;
+}
+
+.ethLockBox {
+    border-right: 1px solid var(--main-color);
+}
+
+.daiTakenBox {
+    border-right: 1px solid var(--main-color);
+}
+
+.liqBox,
+.StaBox,
+.riskStatus {
+    width: 33%;
+}
+
+.liqBox {
+    border-right: 1px solid var(--main-color);
+}
+
+.riskStatus {
+    width: 34%;
+    background-color: rgb(226, 31, 31);
+    color: var(--main-white)
 }

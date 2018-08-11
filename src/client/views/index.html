@@ -17,8 +17,9 @@
     <div class="topBar">
         <div class="projectName">InstaDapp</div>
         <div class="balanceBox">
-            <div class="mainBalance">ETH Balance: 2.034</div>
-            <div class="mainBalance">DAI Balance: 670</div>
+            <div class="mainBalance">ETH: 2.034</div>
+            <div class="mainBalance">DAI: 670</div>
+            <div class="mainBalance">METAMASK</div>
         </div>
     </div>
 
@@ -135,30 +136,37 @@
             <div class="processBoxes" style="margin-right: 0px">
                 <div class="processBoxTitle">Repay Loan</div>
                 <div class="takeLoanBoxes">
-                    <div class="titleTakeLoan">ETH as Collateral</div>
-                    <div class="takeLoanInputBox">
-                        <input class="takeLoanInput" type="number">
+                    <div class="titleTakeLoan">ETH Locked | Price in $</div>
+                    <div class="forNonInputs">
+                        <div class="nonInputCon ethLockBox">350$</div>
+                        <div class="nonInputCon lockEthCurBox">400$</div>
                     </div>
                 </div>
                 <div class="takeLoanBoxes">
-                    <div class="titleTakeLoan">DAI against ETH</div>
-                    <div class="takeLoanInputBox">
-                        <input class="takeLoanInput" type="number">
+                    <div class="titleTakeLoan">DAI Taken | Current %</div>
+                    <div class="forNonInputs">
+                        <div class="nonInputCon daiTakenBox">350</div>
+                        <div class="nonInputCon daiCurPerBox">60</div>
                     </div>
                 </div>
                 <div class="takeLoanBoxes">
-                    <div class="titleTakeLoan">% of DAI</div>
-                    <div class="takeLoanInputBox">
+                    <div class="titleTakeLoan">Liquidation | Status | Risk</div>
+                    <!-- <div class="takeLoanInputBox">
                         <input class="takeLoanInput" type="number">
+                    </div> -->
+                    <div class="forNonInputs">
+                        <div class="nonInputCon liqBox">350$</div>
+                        <div class="nonInputCon StaBox">400$</div>
+                        <div class="nonInputCon riskStatus">High</div>
                     </div>
                 </div>
                 <div class="takeLoanBoxes" style="margin-bottom: 23px">
-                    <div class="titleTakeLoan">Balance ETH</div>
+                    <div class="titleTakeLoan">DAI To repay</div>
                     <div class="takeLoanInputBox">
                         <input class="takeLoanInput" type="number">
                     </div>
                 </div>
-                <div class="butBuySell">Get Loan</div>
+                <div class="butBuySell">Pay Loan</div>
             </div>
 
         </div>
