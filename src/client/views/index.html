@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>InstaDapp</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    
+    <div class="topBar">
+        <div class="projectName">InstaDapp</div>
+        <div class="balanceBox">
+            <div class="mainBalance">ETH Balance: 2.034</div>
+            <div class="mainBalance">DAI Balance: 670</div>
+        </div>
+    </div>
+
+    <div class="coverDiv">
+
+
+        <div class="mainBox">
+
+            <!-- <div class="balanceAndTitle">
+                <div class="mainBoxTitle">Dashboard</div>
+            </div> -->
+
+            <div class="cdpDataBox">
+                <div class="dataBoxes">
+                    <div class="dataDetail">100</div>
+                    <div class="dataName">ETH Received</div>
+                </div>
+                <div class="dataBoxes">
+                    <div class="dataDetail">100</div>
+                    <div class="dataName">ETH Locked</div>
+                </div>
+                <div class="dataBoxes">
+                    <div class="dataDetail">100</div>
+                    <div class="dataName">DAI Taken</div>
+                </div>
+                <div class="dataBoxes">
+                    <div class="dataDetail">100</div>
+                    <div class="dataName">DAI Available</div>
+                </div>
+                <div class="dataBoxes">
+                    <div class="dataDetail">100</div>
+                    <div class="dataName">Percent Dilution</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="processContainer">
+
+            <div class="processBoxes" style="margin-left: 0px">
+                <div class="processBoxTitle">Take Loan</div>
+                <div class="takeLoanBoxes">
+                    <div class="titleTakeLoan">ETH as Collateral</div>
+                    <div class="takeLoanInputBox">
+                        <input class="takeLoanInput" type="number">
+                    </div>
+                </div>
+                <div class="takeLoanBoxes">
+                    <div class="titleTakeLoan">DAI against ETH</div>
+                    <div class="takeLoanInputBox">
+                        <input class="takeLoanInput" type="number">
+                    </div>
+                </div>
+                <div class="takeLoanBoxes">
+                    <div class="titleTakeLoan">% of DAI</div>
+                    <div class="takeLoanInputBox">
+                        <input class="takeLoanInput" type="number">
+                    </div>
+                </div>
+                <div class="takeLoanBoxes" style="margin-bottom: 23px">
+                    <div class="titleTakeLoan">Balance ETH</div>
+                    <div class="takeLoanInputBox">
+                        <input class="takeLoanInput" type="number">
+                    </div>
+                </div>
+                <div class="butBuySell">Get Loan</div>
+            </div>
+
+            <div class="processBoxes">
+                <div class="processBoxTitle">Swap Tokens</div>
+                <div class="changeTokenBut">Change Token</div>
+                <div class="tradeInputContainer">
+                    <div class="coinSellBox coinTradeBox">
+                        <div class="tradeImgCon">
+                            <img src="color/eth.png" id="imgForSell" style="width:44px; height:44px">
+                        </div>
+                        <div class="coinNameSym">
+                            <div class="coinSymbol" id="sellSymbol">ETH</div>
+                            <div class="coinFullName" id="sellFullName">ethereum</div>
+                        </div>
+                        <div class="inputTradeBox">
+                            <input type="number" min="0" class="inputTrade coinOneInput" placeholder="0.00">
+                        </div>
+                    </div>
+                    <div class="ArrowIcon">
+                        <div id="coinTocoin">1ETH = 430 DAI</div>
+                        <i class="fas fa-arrow-down arrowTransform"></i>
+                        <div id="toggleCoin">toggle</div>
+                    </div>
+                    <div class="coinBuyBox coinTradeBox">
+                        <div class="inputTradeBox">
+                            <input type="number" min="0" class="inputTrade coinTwoInput" placeholder="0.00">
+                        </div>
+                        <div class="coinNameSym">
+                            <div class="coinSymbol" id="buySymbol">DAI</div>
+                            <div class="coinFullName" id="buyFullName">dai</div>
+                        </div>
+                        <div class="tradeImgCon">
+                            <img src="color/dai.png" id="imgForBuy" style="width:44px; height:44px">
+                        </div>
+                    </div>
+                </div>
+                <div class="qtyFeesBox">
+                    <div>
+                        <div class="tokenQtyBox">
+                            <div class="tokenQtyValue">ETH: 2.3645</div>
+                            <div class="tradeAllBut" onclick="tradeAllCoin()">Trade All</div>
+                        </div>
+                        <!-- <div class="transFees">Transaction Fees: 0.178 ETH</div> -->
+                    </div>
+                    <div class="butBuySell" id="swapTrade" onclick="swapTokens()">Trade / Swap</div>
+                </div>
+            </div>
+
+            <div class="processBoxes" style="margin-right: 0px">
+                <div class="processBoxTitle">Repay Loan</div>
+                <div class="takeLoanBoxes">
+                    <div class="titleTakeLoan">ETH as Collateral</div>
+                    <div class="takeLoanInputBox">
+                        <input class="takeLoanInput" type="number">
+                    </div>
+                </div>
+                <div class="takeLoanBoxes">
+                    <div class="titleTakeLoan">DAI against ETH</div>
+                    <div class="takeLoanInputBox">
+                        <input class="takeLoanInput" type="number">
+                    </div>
+                </div>
+                <div class="takeLoanBoxes">
+                    <div class="titleTakeLoan">% of DAI</div>
+                    <div class="takeLoanInputBox">
+                        <input class="takeLoanInput" type="number">
+                    </div>
+                </div>
+                <div class="takeLoanBoxes" style="margin-bottom: 23px">
+                    <div class="titleTakeLoan">Balance ETH</div>
+                    <div class="takeLoanInputBox">
+                        <input class="takeLoanInput" type="number">
+                    </div>
+                </div>
+                <div class="butBuySell">Get Loan</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- <script src="js/web3.js"></script> -->
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

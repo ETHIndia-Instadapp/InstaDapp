@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html,
+body {
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+    --main-color: rgb(70, 184, 96);
+    --main-color-op9: rgba(70, 184, 96, 0.9);
+    --main-color-op8: rgba(70, 184, 96, 0.8);
+    --main-color-op7: rgba(70, 184, 96, 0.7);
+    --main-color-op5: rgba(70, 184, 96, 0.5);
+    --main-color-op3: rgba(70, 184, 96, 0.3);
+    --main-color-op1: rgba(70, 184, 96, 0.1);
+    --main-color-op02: rgba(70, 184, 96, 0.02);
+
+    --main-cover: rgb(240, 240, 240);
+    --main-cover-op2: rgba(240, 240, 240, 0.2);
+    --main-cover-op5: rgba(240, 240, 240, 0.5);
+    --main-cover-op7: rgba(240, 240, 240, 0.7);
+
+    --main-white: rgb(255, 255, 255);
+
+    --main-black: rgb(0, 0, 0);
+    --main-black-op5: rgba(0, 0, 0, 0.5);
+
+    margin: 0;
+    background-color: var(--main-cover);
+    color: var(--main-color1);
+}
+
+.coverDiv {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    color: var(--main-white);
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.projectName {
+    margin: auto;
+    margin-left: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.balanceBox {
+    display: flex;
+}
+
+.mainBalance {
+    margin-right: 20px;
+    box-shadow: 0px 0px 0.5px 0.5px var(--main-color-op9);
+    padding: 5px 10px;
+}
+
+.mainBox {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 3px 3px var(--main-color-op7);
+    background-color: var(--main-white);
+    border-radius: 4px;
+}
+
+.balanceAndTitle {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.mainBoxTitle {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.mainBalance {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.cdpDataBox {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(180px, 1fr));
+    grid-gap: 30px;
+}
+
+.dataBoxes {
+    /* box-shadow: 0px 0px 1px 1px var(--main-color-op5); */
+    padding: 10px 0px;
+    box-sizing: border-box;
+    /* transition: all 0.2s ease-in;
+    outline: 0px solid var(--main-color); */
+}
+
+/* .dataBoxes:hover {
+    box-shadow: 0px 0px 11px 11px var(--main-black-op5);
+    background-color: var(--main-color);
+    color: var(--main-white);
+    outline: 10px solid var(--main-color);
+    outline-offset: -2px;
+    cursor: pointer;
+} */
+
+.dataName {
+    margin-bottom: 5px;
+    font-size: 18px
+}
+
+.dataDetail {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.processContainer {
+    margin: 10px auto;
+    margin-top: 20px;
+    display: flex;
+    box-sizing: border-box;
+    /* height: calc(100% - 292px); */
+}
+
+.processBoxes {
+    width: 32%;
+    margin: auto;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 2px var(--main-color-op7);
+    background-color: var(--main-white);
+    /* box-shadow: 0px 0px 2px 2px var(--main-color-op5); */
+    height: calc(100vh - 250px);
+    overflow-y: hidden;
+    box-sizing: border-box;
+    text-align: center;
+    /* height: 500px; */
+}
+
+.processBoxTitle {
+    font-size: 24px;
+    padding: 5px 0px;
+    border-bottom: 2px solid var(--main-color-op7);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.tradeInputContainer {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: auto;
+}
+
+.changeTokenBut {
+    padding: 3px;
+    box-sizing: border-box;
+    width: 150px;
+    margin: auto;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: var(--main-white);
+    border: 1px solid var(--main-color);
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.changeTokenBut:hover {
+    color: var(--main-color);
+    background-color: var(--main-white);
+}
+
+.coinTradeBox {
+    display: flex;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.coinNameSym,
+.inputTradeBox {
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.coinSymbol {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.coinFullName {
+    font-size: 12px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.inputTrade {
+    width: 120px;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--main-color-op5);
+    outline: none;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.inputTrade:focus {
+    border-bottom: 2px solid var(--main-color);
+}
+
+.tradeImgCon {
+    margin-bottom: auto;
+    margin-top: auto;
+    width: max-content;
+    height: max-content;
+}
+
+.ArrowIcon {
+    width: max-content;
+    margin: 15px auto;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.arrowTransform {
+    animation: arrowColor 1.5s infinite 0s linear;
+    transition: transform 0.5s linear;
+    font-size: 36px;
+}
+
+@keyframes arrowColor {
+    0% {
+        color: var(--main-color);
+    }
+    50% {
+        color: var(--main-color);
+    }
+    100% {
+        color: var(--main-cover);
+    }
+}
+
+#toggleCoin,
+#coinTocoin {
+    margin: 10px auto;
+    color: var(--main-black);
+}
+
+.tokenQtyBox {
+    display: flex;
+    width: max-content;
+    margin: 10px auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--main-color);
+    /* animation: outlineAnim 1s infinite 0s linear; */
+}
+
+@keyframes outlineAnim {
+    0% {
+        outline: none;
+        background-color: var(--main-cover);
+    }
+    25% {
+        background-color: var(--main-color);
+        /* outline: 4px solid rgb(78, 230, 91); */
+    }
+    50% {
+        background-color: var(--main-cover);
+        outline: none;
+    }
+    75% {
+        background-color: var(--main-color);
+        /* outline: 4px solid rgb(78, 230, 91); */
+    }
+    100% {
+        background-color: var(--main-cover);
+        outline: none;
+    }
+}
+
+.tokenQtyBoxMob {
+    display: none;
+}
+
+.tokenQtyValue {
+    margin: auto;
+    margin-right: 20px;
+}
+
+.tradeAllBut {
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: var(--main-color);
+    cursor: pointer;
+    border: 1px solid var(--main-color);
+    color: var(--main-white);
+}
+
+.tradeAllBut:hover {
+    background-color: var(--main-cover);
+    color: var(--main-color);
+}
+
+.butBuySell {
+    padding: 7px 0px;
+    width: 220px;
+    height: max-content;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: var(--main-color);
+    color: var(--main-cover);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    border: 2px solid var(--main-color);
+    color: white;
+    background-image: linear-gradient(var(--main-white), var(--main-white));
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .5s ease, color .5s ease;
+    letter-spacing: 0.5px
+}
+
+.butBuySell:hover {
+    background-size: 100% 100%;
+    color: var(--main-color);
+}
+
+.takeLoanBoxes {
+    margin: 17px auto;
+}
+
+.takeLoanInputBox {
+    width: max-content;
+    margin: auto;
+}
+
+.titleTakeLoan {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px
+}
+
+.takeLoanInput {
+    width: 220px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: 2px solid var(--main-color-op5);
+    border: none;
+}
