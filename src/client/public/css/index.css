@@ -21,6 +21,7 @@ body {
     --main-white: rgb(255, 255, 255);
 
     --main-black: rgb(0, 0, 0);
+    --main-black-op8: rgba(0, 0, 0, 0.8);
     --main-black-op5: rgba(0, 0, 0, 0.5);
 
     margin: 0;
@@ -259,6 +260,29 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
+@keyframes outlineAnim {
+    0% {
+        outline: none;
+        background-color: var(--main-color1);
+    }
+    25% {
+        background-color: var(--blue-for-hover);
+        /* outline: 4px solid rgb(78, 230, 91); */
+    }
+    50% {
+        background-color: var(--main-color1);
+        outline: none;
+    }
+    75% {
+        background-color: var(--blue-for-hover);
+        /* outline: 4px solid rgb(78, 230, 91); */
+    }
+    100% {
+        background-color: var(--main-color1);
+        outline: none;
+    }
+}
+
 #toggleCoin,
 #coinTocoin {
     margin: 10px auto;
@@ -377,6 +401,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .forNonInputs {
+    width: 220px;
+    margin: auto;
     display: flex;
     outline: 2px solid var(--main-color-op5);
 }
@@ -388,9 +414,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ethLockBox,
 .lockEthCurBox,
-.daiTakenBox,
-.daiCurPerBox {
+.liqBox,
+.riskStatus {
     width: 50%;
+}
+
+.daiTakenBox {
+    width: 100%;
 }
 
 .ethLockBox {
@@ -401,18 +431,71 @@ input[type=number]::-webkit-outer-spin-button {
     border-right: 1px solid var(--main-color);
 }
 
-.liqBox,
-.StaBox,
-.riskStatus {
-    width: 33%;
-}
-
 .liqBox {
     border-right: 1px solid var(--main-color);
 }
 
 .riskStatus {
-    width: 34%;
     background-color: rgb(226, 31, 31);
     color: var(--main-white)
+}
+
+.coinSelectCover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    background-color: var(--main-black-op8);
+    justify-content: center;
+    align-items: center;   
+}
+
+.coinSelectContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-gap: 30px;
+    width: 100%;
+    height: max-content;
+    max-width: 1000px;
+    margin: auto;
+
+}
+
+.selectCoinBox {
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.1s linear;
+    color: var(--main-white);
+    box-shadow: 0px 0px 4px 4px var(--main-color);
+}
+
+.selectCoinBox:hover {
+    box-shadow: 0px 0px 8px 8px var(--main-color);
+}
+
+.logoNameBox {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.logoBox,
+.nameBox,
+.nameCodeBox {
+    margin: auto;
+}
+
+.nameToken {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.nameBox {
+    font-size: 20px;
+    margin-bottom: 3px;
 }

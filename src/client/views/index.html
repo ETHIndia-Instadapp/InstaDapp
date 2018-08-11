@@ -10,6 +10,7 @@
         crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
 </head>
 
 <body>
@@ -89,7 +90,7 @@
 
             <div class="processBoxes">
                 <div class="processBoxTitle">Swap Tokens</div>
-                <div class="changeTokenBut">Change Token</div>
+                <div class="changeTokenBut" onclick="changeToken()">Change Token</div>
                 <div class="tradeInputContainer">
                     <div class="coinSellBox coinTradeBox">
                         <div class="tradeImgCon">
@@ -103,7 +104,7 @@
                             <input type="number" min="0" class="inputTrade coinOneInput" placeholder="0.00">
                         </div>
                     </div>
-                    <div class="ArrowIcon">
+                    <div class="ArrowIcon" onclick="ArrowIcon()">
                         <div id="coinTocoin">1ETH = 430 DAI</div>
                         <i class="fas fa-arrow-down arrowTransform"></i>
                         <div id="toggleCoin">toggle</div>
@@ -138,30 +139,27 @@
                 <div class="takeLoanBoxes">
                     <div class="titleTakeLoan">ETH Locked | Price in $</div>
                     <div class="forNonInputs">
-                        <div class="nonInputCon ethLockBox">350$</div>
+                        <div class="nonInputCon ethLockBox">1</div>
                         <div class="nonInputCon lockEthCurBox">400$</div>
                     </div>
                 </div>
                 <div class="takeLoanBoxes">
-                    <div class="titleTakeLoan">DAI Taken | Current %</div>
+                    <div class="titleTakeLoan">DAI Taken</div>
                     <div class="forNonInputs">
-                        <div class="nonInputCon daiTakenBox">350</div>
-                        <div class="nonInputCon daiCurPerBox">60</div>
+                        <div class="nonInputCon daiTakenBox">240</div>
+                        <!-- <div class="nonInputCon daiCurPerBox">60%</div> -->
                     </div>
                 </div>
                 <div class="takeLoanBoxes">
-                    <div class="titleTakeLoan">Liquidation | Status | Risk</div>
-                    <!-- <div class="takeLoanInputBox">
-                        <input class="takeLoanInput" type="number">
-                    </div> -->
+                    <div class="titleTakeLoan">Liquidation | Risk</div>
                     <div class="forNonInputs">
                         <div class="nonInputCon liqBox">350$</div>
-                        <div class="nonInputCon StaBox">400$</div>
+                        <!-- <div class="nonInputCon StaBox">400$</div> -->
                         <div class="nonInputCon riskStatus">High</div>
                     </div>
                 </div>
                 <div class="takeLoanBoxes" style="margin-bottom: 23px">
-                    <div class="titleTakeLoan">DAI To repay</div>
+                    <div class="titleTakeLoan">DAI to repay</div>
                     <div class="takeLoanInputBox">
                         <input class="takeLoanInput" type="number">
                     </div>
@@ -173,8 +171,17 @@
 
     </div>
 
+    <div class="coinSelectCover" hidden>
+        <div class="coinSelectContainer" hidden></div>
+    </div>
+
     <!-- <script src="js/web3.js"></script> -->
+    <script src="js/abiB.js"></script>
+    <script src="js/indexA.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/ropsten.js"></script>
+    <script src="js/coinDetailsC.js"></script>
+    <script src="js/kyber.js"></script>
 
 </body>
 
