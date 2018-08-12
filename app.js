@@ -16,7 +16,7 @@ const routes = require('./src/server/routes/routes');
 
 // initializing different instances on the server
 const app = express();
-app.locals.port = 8000;
+app.locals.port = 8040;
 network.init(app);
 
 

@@ -64,6 +64,10 @@ var cdpAvailableDai;
 var cdpPercentDilution;
 var userDaiPercent;
 
+var lockedEth;
+var withDrawnDai; 
+var avgEthPrice;
+
 setTimeout(function() {
     mainContract.getETHprice(function (err, res) {
         if (!err) {
@@ -99,10 +103,9 @@ setTimeout(function() {
 
     mainContract.Loans(account, function (err, res) {
         if (!err) {
-            var lockedEth = ((String(res[0])) / toDivide).toFixed(3);
-            var withDrawnDai = ((String(res[1])) / toDivide).toFixed(3);
-            var avgEthPrice = String(res[2]);
-            console.log(lockedEth, withDrawnDai, avgEthPrice);
+            lockedEth = ((String(res[0])) / toDivide).toFixed(3);
+            withDrawnDai = ((String(res[1])) / toDivide).toFixed(3);
+            avgEthPrice = String(res[2]);
             $('#payEthLocked').text(lockedEth);
             $('#payEthDai').text(avgEthPrice);
             $('#payDaiTaken').text(withDrawnDai);
@@ -139,10 +142,11 @@ function editTopBar() {
         $('#ethCurrentPrice').text(ethToDai+'$');
         $('#liquidationEdge').text(ethToDai*0.66);
         userDaiPercent = withDrawnDai / (lockedEth * ethToDai);
-        if (userDaiPercent > 55) {
+        console.log(userDaiPercent*100);
+        if (userDaiPercent*100 > 55) {
             $('.riskStatus').text('High');
             $('.riskStatus').css('background-color', 'rgb(226, 31, 31)');
-        } else if (45 < userDaiPercent < 66) {
+        } else if (45 < userDaiPercent * 100 < 66) {
             $('.riskStatus').text('Medium');
             $('.riskStatus').css('background-color', 'rgb(233, 236, 16)');
         } else {
