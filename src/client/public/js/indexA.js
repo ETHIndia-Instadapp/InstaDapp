@@ -53,17 +53,24 @@ var coinOneQtyInWei,
 
 var coinOneContract;
 var coinOneAdd = ethAdd;
-var coinTwoAdd = "0xaD6D458402F60fD3Bd25163575031ACDce07538D";
-var coinContract = web3.eth.contract(tokensAbi).at(coinTwoAdd);
+var coinTwoAdd;
+var coinContract;
 
+var networkID;
 
 if (typeof web3 !== 'undefined') {
     var web3 = new Web3(web3.currentProvider);
     if (web3.currentProvider.isMetaMask === true || web3.currentProvider.isTrust === true) {
         web3.version.getNetwork((err, netId) => {
-            if (netId == 1) {
-                onMain = true;
+            networkID = netId;
+            if (netId == 3) {
+                var coinTwoAdd = "0xaD6D458402F60fD3Bd25163575031ACDce07538D";
+            } else if (netId == 42) {
+                var coinTwoAdd = "0xc4375b7de8af5a38a93548eb8453a498222c4ff2";
+            } else {
+                alert("You're not on right network. Switch to Kovan Network in Metamask.");
             }
+            coinContract = web3.eth.contract(tokensAbi).at(coinTwoAdd);
             connection = true;
             account = web3.eth.accounts[0];
             ethBalance(account);

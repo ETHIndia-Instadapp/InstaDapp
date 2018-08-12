@@ -167,6 +167,9 @@ $('.coinTwoInput').on('input', function () {
 var allowanceLimit = 2 ** 255;
 
 function swapTokens() {
+    if (networkID != 3) {
+        return popAlert(`Swap / Trade function (Kyber Network) is only enables for Ropsten, until we move to Mainnet.`);
+    }
     if (coinOneValue > 0 && coinTwoValue > 0) {
         if (buySell == 1) {
             if (coinOneValue <= coinOneQty) {
