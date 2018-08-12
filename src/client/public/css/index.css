@@ -438,7 +438,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .riskStatus {
-    background-color: rgb(226, 31, 31);
+    background-color: rgb(45, 230, 45);
+    /* background-color: rgb(226, 31, 31); */
     color: var(--main-white)
 }
 

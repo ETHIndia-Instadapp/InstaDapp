@@ -10,6 +10,7 @@ function ethBalance(account) {
             if (buySell == 1) {
                 $('.tokenQtyValue').text(`${coinOneQty.toFixed(8)} ${coinOneName}`);
             }
+            $('#topEthBal').text(`${coinOneName}: ${coinOneQty.toFixed(4)}`)
         } else {
             web3Error();
             console.error(err);
@@ -21,6 +22,7 @@ function ethBalance(account) {
 var kyber = ropsData;
 
 var onMain = false;
+var connection = false;
 var account;
 
 var coinDetail = "eth";
@@ -62,12 +64,14 @@ if (typeof web3 !== 'undefined') {
             if (netId == 1) {
                 onMain = true;
             }
+            connection = true;
             account = web3.eth.accounts[0];
             ethBalance(account);
             coinContract.balanceOf(account, function (err, res) {
                 if (!err) {
                     coinTwoQtyInWei = String(res);
                     coinTwoQty = coinTwoQtyInWei/(10**coinTwoDecimal);
+                    $('#topDaiBal').text(`${coinTwoName}: ${coinTwoQty.toFixed(4)}`)
                 } else {
                     console.log(err);
                 };

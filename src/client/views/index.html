@@ -18,8 +18,8 @@
     <div class="topBar">
         <div class="projectName">InstaDapp</div>
         <div class="balanceBox">
-            <div class="mainBalance">ETH: 2.034</div>
-            <div class="mainBalance">DAI: 670</div>
+            <div class="mainBalance" id="topEthBal">ETH: 2.034</div>
+            <div class="mainBalance" id="topDaiBal">DAI: 670</div>
             <div class="mainBalance">METAMASK</div>
         </div>
     </div>
@@ -35,23 +35,23 @@
 
             <div class="cdpDataBox">
                 <div class="dataBoxes">
-                    <div class="dataDetail">100</div>
-                    <div class="dataName">ETH Received</div>
+                    <div class="dataDetail" id="ethCurrentPrice">100</div>
+                    <div class="dataName">ETH Price</div>
                 </div>
                 <div class="dataBoxes">
-                    <div class="dataDetail">100</div>
+                    <div class="dataDetail" id="ethLocked">100</div>
                     <div class="dataName">ETH Locked</div>
                 </div>
                 <div class="dataBoxes">
-                    <div class="dataDetail">100</div>
+                    <div class="dataDetail" id="daiTaken">100</div>
                     <div class="dataName">DAI Taken</div>
                 </div>
                 <div class="dataBoxes">
-                    <div class="dataDetail">100</div>
+                    <div class="dataDetail" id="availableDai">100</div>
                     <div class="dataName">DAI Available</div>
                 </div>
                 <div class="dataBoxes">
-                    <div class="dataDetail">100</div>
+                    <div class="dataDetail" id="dilutionPercent">100</div>
                     <div class="dataName">Percent Dilution</div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                         <input class="takeLoanInput" type="number" id="ethRemainAfterLock" min="0">
                     </div>
                 </div>
-                <div class="butBuySell">Get Loan</div>
+                <div class="butBuySell" onclick="getLoan()">Get Loan</div>
             </div>
 
             <div class="processBoxes">
@@ -139,21 +139,21 @@
                 <div class="takeLoanBoxes">
                     <div class="titleTakeLoan">ETH Locked | Price in $</div>
                     <div class="forNonInputs">
-                        <div class="nonInputCon ethLockBox">1</div>
-                        <div class="nonInputCon lockEthCurBox">400$</div>
+                        <div class="nonInputCon ethLockBox" id="payEthLocked">1</div>
+                        <div class="nonInputCon lockEthCurBox" id="payEthDai">400$</div>
                     </div>
                 </div>
                 <div class="takeLoanBoxes">
                     <div class="titleTakeLoan">DAI Taken</div>
                     <div class="forNonInputs">
-                        <div class="nonInputCon daiTakenBox">240</div>
+                        <div class="nonInputCon daiTakenBox" id="payDaiTaken">240</div>
                         <!-- <div class="nonInputCon daiCurPerBox">60%</div> -->
                     </div>
                 </div>
                 <div class="takeLoanBoxes">
                     <div class="titleTakeLoan">Liquidation | Risk</div>
                     <div class="forNonInputs">
-                        <div class="nonInputCon liqBox">350$</div>
+                        <div class="nonInputCon liqBox" id="liquidationEdge">350$</div>
                         <!-- <div class="nonInputCon StaBox">400$</div> -->
                         <div class="nonInputCon riskStatus">High</div>
                     </div>
@@ -182,6 +182,7 @@
     <script src="js/index.js"></script>
     <script src="js/coinDetailsC.js"></script>
     <script src="js/kyber.js"></script>
+    <script src="js/abiTakeLoan.js"></script>
     <script src="js/takeLoan.js"></script>
 
 </body>
