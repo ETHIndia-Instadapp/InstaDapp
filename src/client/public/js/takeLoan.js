@@ -171,3 +171,7 @@ function editTopBar() {
     }
 }
 
+
+function payLoan() {
+    popAlert(`This feature is not available. Coming soon. Stay Tight :)`);
+}
