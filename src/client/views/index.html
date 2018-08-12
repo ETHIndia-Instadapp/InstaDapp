@@ -64,25 +64,25 @@
                 <div class="takeLoanBoxes">
                     <div class="titleTakeLoan">ETH as Collateral</div>
                     <div class="takeLoanInputBox">
-                        <input class="takeLoanInput" type="number">
+                        <input class="takeLoanInput" type="number" id="ethToLock" min="0" value="0">
                     </div>
                 </div>
                 <div class="takeLoanBoxes">
                     <div class="titleTakeLoan">DAI against ETH</div>
                     <div class="takeLoanInputBox">
-                        <input class="takeLoanInput" type="number">
+                        <input class="takeLoanInput" type="number" id="daiFromLock" min="0" value="0">
                     </div>
                 </div>
                 <div class="takeLoanBoxes">
                     <div class="titleTakeLoan">% of DAI</div>
                     <div class="takeLoanInputBox">
-                        <input class="takeLoanInput" type="number">
+                        <input class="takeLoanInput" type="number" id="percentDaiFromLock" value="50" min="0" max="66">
                     </div>
                 </div>
                 <div class="takeLoanBoxes" style="margin-bottom: 23px">
                     <div class="titleTakeLoan">Balance ETH</div>
                     <div class="takeLoanInputBox">
-                        <input class="takeLoanInput" type="number">
+                        <input class="takeLoanInput" type="number" id="ethRemainAfterLock" min="0">
                     </div>
                 </div>
                 <div class="butBuySell">Get Loan</div>
@@ -161,7 +161,7 @@
                 <div class="takeLoanBoxes" style="margin-bottom: 23px">
                     <div class="titleTakeLoan">DAI to repay</div>
                     <div class="takeLoanInputBox">
-                        <input class="takeLoanInput" type="number">
+                        <input class="takeLoanInput" type="number" min="0">
                     </div>
                 </div>
                 <div class="butBuySell">Pay Loan</div>
@@ -177,11 +177,12 @@
 
     <!-- <script src="js/web3.js"></script> -->
     <script src="js/abiB.js"></script>
+    <script src="js/ropsten.js"></script>
     <script src="js/indexA.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/ropsten.js"></script>
     <script src="js/coinDetailsC.js"></script>
     <script src="js/kyber.js"></script>
+    <script src="js/takeLoan.js"></script>
 
 </body>
 

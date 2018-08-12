@@ -1,10 +1,29 @@
-// hiding boxes in ropsten
-function forRopsten() {
-    kyber = ropsData;
+var buySell = 1;
+var ethBal;
+
+function ethBalance(account) {
+    web3.eth.getBalance(account, function (err, res) {
+        if (!err) {
+            coinOneQtyInWei = String(res);
+            coinOneQty = coinOneQtyInWei / (10 ** coinOneDecimal);
+            ethBal = coinOneQty;
+            if (buySell == 1) {
+                $('.tokenQtyValue').text(`${coinOneQty.toFixed(8)} ${coinOneName}`);
+            }
+        } else {
+            web3Error();
+            console.error(err);
+        };
+    });
 }
+
+// hiding boxes in ropsten
+var kyber = ropsData;
 
 var onMain = false;
 var account;
+
+var coinDetail = "eth";
 
 var coinOneName = "ETH",
     coinOneFullName = "Ethereum",
@@ -30,9 +49,10 @@ var coinOneQtyInWei,
     coinTwoQty,
     coinTwoDecimal = 18;
 
-var coinOneAdd = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
-var coinTwoAdd = "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359";
-var coinContract = web3.eth.contract(tokensAbi).at(coinTwoAdd);;
+var coinOneContract;
+var coinOneAdd = ethAdd;
+var coinTwoAdd = "0xaD6D458402F60fD3Bd25163575031ACDce07538D";
+var coinContract = web3.eth.contract(tokensAbi).at(coinTwoAdd);
 
 
 if (typeof web3 !== 'undefined') {
@@ -43,24 +63,11 @@ if (typeof web3 !== 'undefined') {
                 onMain = true;
             }
             account = web3.eth.accounts[0];
-            web3.eth.getBalance(account, function (err, res) {
-                if (!err) {
-                    coinOneQtyInWei = String(res);
-                    coinOneQty = coinOneQtyInWei/(10**coinOneDecimal);
-                    $('.tokenQtyValue').text(`${coinOneQty.toFixed(8)} ${coinOneName}`);
-                } else {
-                    web3Error();
-                    var title = 'ERROR GETTING QUANTITY';
-                    var content = `Unable to get quantity of ETH in your wallet`;
-                    showAlert(title, content);
-                    console.error(err);
-                };
-            });
+            ethBalance(account);
             coinContract.balanceOf(account, function (err, res) {
                 if (!err) {
                     coinTwoQtyInWei = String(res);
                     coinTwoQty = coinTwoQtyInWei/(10**coinTwoDecimal);
-                    // $('.tokenQtyValue').text(`${coinOneQty.toFixed(8)} ${coinOneName}`);
                 } else {
                     console.log(err);
                 };
