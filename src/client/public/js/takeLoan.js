@@ -78,55 +78,51 @@ var avgEthPrice;
 
 function populatePage() {
 
-    if (web3Check() && ethNetCheck() && ethAddressCheck()) {
-
-        mainContract.getETHprice(function (err, res) {
-            if (!err) {
-                // $('#ethLocked').text(String(res));
-                ethToDai = Number(res);
-                editTopBar();
-            } else {
-                console.log(err);
-            };
-        });
-
-        mainContract.GlobalLocked(function (err, res) {
-            if (!err) {
-                var value = ((String(res)) / toDivide).toFixed(2);
-                cdpEthLocked = value;
-                $('#ethLocked').text(cdpEthLocked);
-                editTopBar();
-            } else {
+    mainContract.getETHprice(function (err, res) {
+        if (!err) {
+            // $('#ethLocked').text(String(res));
+            ethToDai = Number(res);
+            editTopBar();
+        } else {
             console.log(err);
-            };
-        });
+        };
+    });
 
-        mainContract.GlobalWithdraw(function (err, res) {
-            if (!err) {
-                var value = ((String(res)) / toDivide).toFixed(2);
-                cdpDaiTaken = value;
-                $('#daiTaken').text(cdpDaiTaken);
-                editTopBar();
-            } else {
-                console.log(err);
-            };
-        });
+    mainContract.GlobalLocked(function (err, res) {
+        if (!err) {
+            var value = ((String(res)) / toDivide).toFixed(2);
+            cdpEthLocked = value;
+            $('#ethLocked').text(cdpEthLocked);
+            editTopBar();
+        } else {
+        console.log(err);
+        };
+    });
 
-        mainContract.Loans(account, function (err, res) {
-            if (!err) {
-                lockedEth = ((String(res[0])) / toDivide).toFixed(2);
-                withDrawnDai = ((String(res[1])) / toDivide).toFixed(2);
-                avgEthPrice = String(res[2]);
-                $('#payEthLocked').text(lockedEth);
-                $('#payEthDai').text(avgEthPrice);
-                $('#payDaiTaken').text(withDrawnDai);
-                editTopBar();
-            } else {
-                console.log(err);
-            };
-        });
+    mainContract.GlobalWithdraw(function (err, res) {
+        if (!err) {
+            var value = ((String(res)) / toDivide).toFixed(2);
+            cdpDaiTaken = value;
+            $('#daiTaken').text(cdpDaiTaken);
+            editTopBar();
+        } else {
+            console.log(err);
+        };
+    });
 
-    }
+    mainContract.Loans(account, function (err, res) {
+        if (!err) {
+            lockedEth = ((String(res[0])) / toDivide).toFixed(2);
+            withDrawnDai = ((String(res[1])) / toDivide).toFixed(2);
+            avgEthPrice = String(res[2]);
+            $('#payEthLocked').text(lockedEth);
+            $('#payEthDai').text(avgEthPrice);
+            $('#payDaiTaken').text(withDrawnDai);
+            editTopBar();
+        } else {
+            console.log(err);
+        };
+    });
 
 }
 

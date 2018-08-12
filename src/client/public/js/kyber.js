@@ -70,15 +70,16 @@ function funcToSelect(coin) {
 
 function ArrowIcon() {
     if (buySell == 0) {
-        toggleOne();
         buySell = 1;
+        toggleOne();
     } else if (buySell == 1) {
-        toggleZero();
         buySell = 0;
+        toggleZero();
     }
 }
 
 function toggleZero() {
+    console.log(123);
     $('.tokenQtyBox').css('animation', 'outlineAnim 1s forwards 0s linear');
     setTimeout(function () {
         $('.tokenQtyBox').css('animation', 'none')
@@ -94,6 +95,7 @@ function toggleZero() {
 }
 
 function toggleOne() {
+    console.log(0989);
     $('.tokenQtyBox').css('animation', 'outlineAnim 1s forwards 0s linear');
     setTimeout(function () {
         $('.tokenQtyBox').css('animation', 'none')
@@ -107,9 +109,9 @@ function toggleOne() {
     }
     getExpectedRate();
 }
-toggleOne();
 
 function getExpectedRate() {
+    console.log(coinOneAdd, coinTwoAdd);
     var oneNum = 10 ** coinOneDecimal;
     mainKyberContract.getExpectedRate(coinOneAdd, coinTwoAdd, oneNum, function (err, res) {
         if (!err) {
@@ -135,6 +137,8 @@ function getExpectedRate() {
         };
     });
 }
+toggleOne();
+
 
 var coinOneValue = 0;
 var coinTwoValue = 0;

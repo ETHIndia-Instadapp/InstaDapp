@@ -5,9 +5,17 @@ if (typeof web3 !== 'undefined') {
     popAlert("This dapp only works with https://metamask.io on Kovan Test Network. Do the needful to make the webpage functional.");
 }
 
+var timepass = true;
 setInterval(function() {
-    if (typeof web3 !== 'undefined') {
-        userNetwork();
+    console.log(timepass);
+    if (timepass) {
+        if (typeof web3 !== 'undefined') {
+            userNetwork();
+            timepass = false;
+        }
+    }
+    if (web3Check(true) && ethNetCheck(true) && ethAddressCheck(true)) {
+        populatePage();
     }
 }, 3000);
 
@@ -16,17 +24,22 @@ function userNetwork(updateBool) {
         switch (networkId) {
             case "1":
                 networkName = "main";
+                popAlert('The dapp only works on Kovan Ethereum Network. Connect to the Kovan Test Network in Metamask.');
+                popAlert('For loaning (DAI CDP loan) switch to Kovan Ethereum Network and for swapping (Kyber Network) switch to ropsten');
                 break;
             case "3":
                 networkName = "ropsten";
+                popAlert('For loaning (DAI CDP loan) switch to Kovan Ethereum Network. Here on ropsten use Kyber Swap.');
                 break;
             case "4":
                 networkName = "rinkeby";
+                popAlert('For swapping (Kyber Network) switch to ropsten. Here on Kovan Take Loan.');
                 break;
             case "42":
                 networkName = "kovan";
                 break;
             default:
+                popAlert('For loaning (DAI CDP loan) switch to Kovan Ethereum Network and for swapping (Kyber Network) switch to ropsten');
                 networkName = "unknown";
         }
         UserNetwork = networkName;
@@ -47,12 +60,16 @@ function web3Check(dontNotify) {
 }
 
 // ethereum network check
+var kovanSolution = true;
 function ethNetCheck(dontNotify) {
     if (UserNetwork == 'kovan') {
         return true;
     } else {
-        if (!dontNotify) {
-            popAlert('The dapp only works on Kovan Ethereum Network. Connect to the Kovan Test Network in Metamask.');
+        if (dontNotify) {
+            if (kovanSolution) {
+                // popAlert('The dapp only works on Kovan Ethereum Network. Connect to the Kovan Test Network in Metamask.');
+                kovanSolution = false;
+            }
         }
         return false;
     }

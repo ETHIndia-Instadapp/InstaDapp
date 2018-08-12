@@ -53,7 +53,7 @@ var coinOneQtyInWei,
 
 var coinOneContract;
 var coinOneAdd = ethAdd;
-var coinTwoAdd;
+var coinTwoAdd = "0xaD6D458402F60fD3Bd25163575031ACDce07538D";
 var coinContract;
 
 var networkID;
@@ -64,9 +64,9 @@ if (typeof web3 !== 'undefined') {
         web3.version.getNetwork((err, netId) => {
             networkID = netId;
             if (netId == 3) {
-                var coinTwoAdd = "0xaD6D458402F60fD3Bd25163575031ACDce07538D";
+                coinTwoAdd = "0xaD6D458402F60fD3Bd25163575031ACDce07538D";
             } else if (netId == 42) {
-                var coinTwoAdd = "0xc4375b7de8af5a38a93548eb8453a498222c4ff2";
+                coinTwoAdd = "0xc4375b7de8af5a38a93548eb8453a498222c4ff2";
             } else {
                 alert("You're not on right network. Switch to Kovan Network in Metamask.");
             }
